@@ -8,6 +8,7 @@
 </head>
 <body>
     
+    <div id="root"></div>
     <script>
         // What are promises?
         // Promises are code which say => I promise a Result
@@ -35,6 +36,69 @@
         })
 
 
+        // States of promises     ||  Result of promises
+        // pending                          undefined 
+        // fulfilled                        a result value
+        // rejected                         an error object
+
+
+        function display(data){
+            document.getElementById("root").innerHTML = data;
+        }
+
+        let promiseTemp = new Promise((myResolve,myReject)=>{
+
+            let x = 0;
+
+            // producing code - which takes some time
+
+            if(x===0){
+                setTimeout(()=>myResolve("All good"),4000)
+                
+            }else{
+
+                myReject("Arrg! Something went wrong!")
+            }
+        })
+
+        // promiseTemp.then(function(value){
+        //     display(value)
+        // },
+        // function(error){
+        //     display(error)
+        // })
+
+        // promiseTemp.then(function(value){
+        //     display(value)
+        // }).catch(function(error){
+        //     display(error)
+        // })
+
+        promiseTemp.then(value => {
+            display(value)
+        }).catch(error => {
+            display(error)
+        })
+
+        //real life example
+        // login to fb using abc@fake.com 123456 
+
+        let p = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(10)
+            },3000)
+        })
+
+        p.then(result=>{
+            console.log(result)
+            return result*2
+        }).then(result=>{
+            console.log(result)
+            return result*3
+        }).then(result=>{
+            console.log(result)
+            return result*4
+        })
     </script>
 </body>
 </html>

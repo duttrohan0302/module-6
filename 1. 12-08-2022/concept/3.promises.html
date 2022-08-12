@@ -91,14 +91,29 @@
 
         p.then(result=>{
             console.log(result)
-            return result*2
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{resolve(result*2)},3000)
+            })
         }).then(result=>{
             console.log(result)
-            return result*3
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{resolve(result*3)},3000)
+            })
         }).then(result=>{
             console.log(result)
-            return result*4
-        })
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{resolve(result*4)},3000)
+            })
+        }).then(result=>
+            console.log(result)
+        )
+
+        function temp(x){
+            console.log(x)
+            return x*2;
+        }
+
+        temp(2);
     </script>
 </body>
 </html>

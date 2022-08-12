@@ -31,10 +31,12 @@
             const hh = dt.getHours().toString().padStart(2,'0');
             const min = dt.getMinutes().toString().padStart(2,'0');
             const sec = dt.getSeconds().toString().padStart(2,'0');
+            const ms = dt.getMilliseconds().toString().padStart(3,'0');
 
             // document.getElementById("root").innerHTML = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds()
-            document.getElementById("root").innerHTML = `${hh}:${min}:${sec}`
+            document.getElementById("root").innerHTML = `${hh}:${min}:${sec}:${ms}`
             
+            setTimeout(displayTime,1);
         }
 
         let str = "rohandutt";
@@ -45,7 +47,12 @@
 
         displayTime()
 
-        setInterval(displayTime,1000)
+        // setInterval(displayTime,1)
+
+
+
+        // We created a clock using set interval
+        // Can we create a clock using set timeout, if yes how?
     </script>
 </body>
 </html>

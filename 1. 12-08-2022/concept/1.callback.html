@@ -23,7 +23,23 @@
             displaySth("second")
         }
 
+        const printTemp = () => {
+            const x = 5;
+            return x;
+        }
+        console.log(printTemp)
+        console.log(printTemp())
+        
+        // Correct way 1
         // setTimeout(()=>second(),5000)
+
+        // Correct way 2
+        // setTimeout(second,5000)
+
+        // Incorrect way
+        // setTimeout(second(),5000)
+
+
         // second();
         // first();
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    
+    <script>
+        // What are promises?
+        // Promises are code which say => I promise a Result
+
+        // 'Producing Code' is a code that can take some time
+        // 'Consuming Code' is a code that must wait for the result
+
+
+        //syntax
+        let basicPromise = new Promise(function(resolve, reject){
+            //Producing code which may take some time
+
+            // only one of resolve or reject should be called
+            resolve()
+            // reject()
+
+            // how to know whether to resolve or reject - based on your producing code
+        });
+
+        //Consuming code => Must wait for a fulfilled Promise
+        basicPromise.then(function(value){
+            console.log("Work done successfully with output",value)
+        },function(error){
+            console.log("Some error occurred",error)
+        })
+
+
+    </script>
+</body>
+</html>
